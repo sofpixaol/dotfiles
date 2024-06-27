@@ -1,0 +1,226 @@
+#---------- Per-User/Game Settings  =============================================
+OPTIONS=name:Sofixic
+#OPTIONS=align:n
+#OPTIONS=role:
+
+OPTIONS=dogname:Wolflandish
+OPTIONS=catname:Meowlandish
+OPTIONS=horsename:Dasher
+OPTIONS=fruit:Strawberry
+
+## Allow saving and loading bones files.
+#OPTIONS=bones
+
+## Conducts
+# Start the character with no armor.
+#OPTIONS=nudist
+
+# Start the character permanently blind
+#OPTIONS=blind
+
+#---------- Gameplay ============================================================
+## Autoquiver ranged weapons
+#OPTIONS=autoquiver
+
+## Autodig if you are wielding a digging tool
+#OPTIONS=autodig
+
+## Auto open doors
+OPTIONS=autoopen
+
+## Require explicit yes for some prompts
+# Confirm: for any prompts which are set to require "yes" rather than 'y', also require "no" to reject instead of accepting any non-yes response as no
+# attack: require "yes" rather than 'y' to confirm attacking a peaceful monster
+# pray: require 'y' to confirm an attempt to pray rather than immediately praying; on by default
+# wand-break: require "yes" rather than 'y' to confirm breaking a wand. (NetHack 3.6.2 only)
+# Remove: require selection from inventory for R and T commands even when wearing just one applicable item
+
+OPTIONS=paranoid_confirmation:Confirm quit attack pray wand-break wand Remove
+
+# Number pad (OFF is 0)
+OPTIONS=number_pad:0
+
+OPTIONS=autopickup
+OPTIONS=pickup_types:$
+OPTIONS=pickup_thrown
+OPTIONS=pickup_burden:S
+OPTIONS=time:true
+
+#---------- User Interface ======================================================
+#OPTIONS=windowtype:curses
+
+## How recalled messages (ctrl-p) are displayed.
+OPTIONS=msg_window:single
+OPTIONS=msghistory:1000
+
+## Sort items by name. One of "none", "loot", or "full"
+#OPTIONS=sortloot:full
+
+# NetHack provides some additional command assistance when it detects some anticipated mistakes.
+OPTIONS=!cmdassist
+
+# Disclose
+# Don't show inventory, attributes, or dungeon overview on death
+#OPTIONS=disclose: -i -a -o
+
+# Don't display certain non-essential messages, such as doors being destroyed.
+OPTIONS=!verbose
+
+# Other window config
+OPTIONS=splash_screen
+OPTIONS=windowborders:1
+OPTIONS=perm_invent
+OPTIONS=term_cols:110
+OPTIONS=term_rows:32
+
+#---------- Graphics ============================================================
+## use IBMgraphics or DECgraphics
+#OPTIONS=symset:DECgraphics
+#OPTIONS=symset:IBMgraphics
+
+# Hide out-of-sight areas of lit rooms
+OPTIONS=dark_room
+
+## Use inverse for pets
+OPTIONS=hilite_pet
+
+## Use inverse for piles of items
+OPTIONS=hilite_pile
+
+## Change symbols
+SYMBOLS=S_ghost:X
+SYMBOLS=S_lava:~
+SYMBOLS=S_pool:~
+SYMBOLS=S_water:~
+SYMBOLS=S_boulder:0
+
+## Sparkle is annoying
+OPTIONS=!sparkle
+
+#---------- Menu Colors =========================================================
+# Colored menus. Regular expressions allowed.
+OPTIONS=menucolors
+MENUCOLOR=" blessed "=green
+MENUCOLOR=" holy "=blue
+MENUCOLOR=" cursed "=red
+MENUCOLOR=" unholy "=red
+MENUCOLOR=" cursed .* (being worn)"=red&underline
+
+# Make Vegan GREEN & BOLD
+MENUCOLOR="(food |cram |K-|C-)ration|gunyoki"=green&bold
+MENUCOLOR="lembas wafer|melon|carrot|tin .* spinach"=green&bold
+MENUCOLOR=" oranges?( named.*)?$"=green&bold
+MENUCOLOR=" pears?( named.*)?$"=green&bold
+MENUCOLOR=" apple|banana|kelp|eucalyptus|garlic|wolfsbane"=green&bold
+MENUCOLOR=" muffin"=green&bold
+MENUCOLOR="(tin of )?(gelatinous cube|acid blob|quivering blob)( corpse)?"=green&bold
+MENUCOLOR="(tin of )?(blue|spotted|ochre) jelly( corpse)?"=green&bold
+MENUCOLOR="(tin of )?lichen|shrieker|violet fungus|(brown|yellow|green|red) mold( corpse)?"=green&bold
+
+# Shiny things
+MENUCOLOR=" lamp"=yellow
+MENUCOLOR=" candle"=yellow
+MENUCOLOR=" magic lamp|lamp .* magic"=yellow&bold
+#MENUCOLOR=" gold piece"=yellow
+
+# Dangerous with Bag of Holding
+MENUCOLOR=" cursed.* bag .* holding"=orange&underline
+MENUCOLOR=" bag .* tricks"=orange&underline
+MENUCOLOR=" wand of [Cc]ancel.*"=orange&underline
+MENUCOLOR=" wand called [Cc]ancel.*"=orange&underline
+MENUCOLOR=" wand .* van"=orange&underline
+MENUCOLOR=" wand called .* vanish( .*)?$"=orange&underline
+
+# Really bad cursed things to have
+MENUCOLOR="[Ll]oadstone"=orange&underline
+MENUCOLOR=" cursed.* luck(stone)?($| )"=orange&bold
+MENUCOLOR=" cursed.* (Bell of Opening|silver bell|Candelabrum of Invocation|candelabrum|Book of the Dead|papyrus spellbook)"=orange&bold
+MENUCOLOR=" cursed.* unicorn horn"=orange&bold
+
+
+#---------- Status Hilites ======================================================
+OPTIONS=statushilites
+
+# HP
+OPTIONS=hitpointbar
+OPTIONS=hilite_status:hitpoints/100%/grey&normal
+OPTIONS=hilite_status:hitpoints/<100%/green&normal
+OPTIONS=hilite_status:hitpoints/<66%/yellow&normal
+OPTIONS=hilite_status:hitpoints/<50%/orange&normal
+OPTIONS=hilite_status:hitpoints/<33%/red&bold
+OPTIONS=hilite_status:hitpoints/<15%/red&inverse
+
+## Pw
+OPTIONS=hilite_status:power/100%/grey&normal
+OPTIONS=hilite_status:power/<100%/green&normal
+OPTIONS=hilite_status:power/<66%/yellow&normal
+OPTIONS=hilite_status:power/<50%/orange&normal
+OPTIONS=hilite_status:power/<33%/red&bold
+
+## Carry
+OPTIONS=hilite_status:cap/burdened/yellow/stressed/orange/strained/red&bold/overtaxed/red&inverse/overloaded/red&inverse&blink
+
+## Hunger
+OPTIONS=hilite_status:hunger/satiated/yellow/hungry/orange/weak/red&bold/fainting/red&inverse/fainted/red&inverse&blink
+
+## Mental
+OPTIONS=hilite_status:condition/hallu/yellow
+OPTIONS=hilite_status:condition/conf/orange
+OPTIONS=hilite_status:condition/stun/red&bold
+
+## Health
+OPTIONS=hilite_status:condition/termill/red&inverse
+OPTIONS=hilite_status:condition/foodpois/red&inverse
+OPTIONS=hilite_status:condition/slime/red&inverse
+
+# Str, Con, Dex, Int, Wis, Cha
+OPTIONS=hilite_status:characteristics/up/green/down/red
+
+# gold
+OPTIONS=hilite_status:gold/up/yellow/down/brown
+
+# time
+OPTIONS=hilite_status:time
+
+#---------- Messagetypes ========================================================
+# Monotonous, mundane messages
+MSGTYPE=norep "You see here a .*"
+MSGTYPE=norep "You see here an .*"
+MSGTYPE=hide "You drop .*"
+MSGTYPE=hide "You swap places with your .*"
+MSGTYPE=hide "You descend .*"
+MSGTYPE=hide "You (climb|fly) (up|down) .*"
+MSGTYPE=hide "Restoring save file..." #noobhack
+MSGTYPE=hide "With great effort you move the boulder."
+MSGTYPE=hide "Perhaps that's why you cannot move it."
+MSGTYPE=hide "You cannot drop something you are wearing."
+MSGTYPE=hide "You have a little trouble removing .*"
+MSGTYPE=hide "Your movements are now unencumbered."
+
+MSGTYPE=hide "You feel full of energy"
+MSGTYPE=hide "You are in full health"
+
+MSGTYPE=hide "Aloha .*"
+
+## delayed instadeaths. always prompt for -more-
+MSGTYPE=stop "You are slowing down."
+MSGTYPE=stop "You find it hard to breathe."
+MSGTYPE=stop "You are turning a little .*"
+
+# Stash and container spam
+# caution when typing fast -- the suppressed msg may catch the keystroke intended for the actual loot menu
+MSGTYPE=hide "You put .* into the .*"
+MSGTYPE=hide "You cannot stash something you are wearing."
+MSGTYPE=hide "You carefully open the .*"
+MSGTYPE=hide "You open the .*"
+
+# Shop spam
+MSGTYPE=hide "For you, .*"
+MSGTYPE=hide "You bought .*"
+MSGTYPE=hide "Thank you for shopping in .*"
+
+# Altar spam
+MSGTYPE=hide ".* land on the altar."
+MSGTYPE=hide ".* lands on the altar."
+MSGTYPE=hide "There is a black flash as .*"
+MSGTYPE=hide "There is an amber flash as .*"
