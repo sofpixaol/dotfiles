@@ -1,0 +1,14 @@
+[font]
+size = 7
+
+[font.bold]
+family = "JetBrainsMono"
+
+[font.bold_italic]
+family = "JetBrainsMono"
+
+[font.italic]
+family = "JetBrainsMono"
+
+[font.normal]
+family = "JetBrainsMono"
